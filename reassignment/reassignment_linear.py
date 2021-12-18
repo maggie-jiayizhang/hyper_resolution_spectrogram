@@ -18,7 +18,7 @@ import numpy as np
 # for debugging
 torch.set_printoptions(precision=10)
 
-def high_resolution_spectrogram(x, q, tdeci, over, noct, minf, maxf, lint=0.25, device=torch.device('cuda'), dtype=torch.float32):
+def high_resolution_spectrogram(x, q, tdeci, over, noct, minf, maxf, lint=0.2, device=torch.device('cuda'), dtype=torch.float32):
     '''
     x        signal
     q        a measure of temporal resolution
