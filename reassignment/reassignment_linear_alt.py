@@ -1,5 +1,5 @@
 ### alternative version of reassignment with linear-scale frequency scan ###
-# author: Jiayi (Maggie) Zhang <maggiezhangjiayi@gmail.com>
+# author: Jiayi (Maggie) Zhang <jiayizha@andrew.cmu.edu>
 
 # based on 
 # 1) the original Matlab implementation (see reassignmentgw.m),

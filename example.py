@@ -1,6 +1,6 @@
 ### an example for batch processing audios in a given folder with
 # linear-scale frequency scan implementation
-# author: Jiayi (Maggie) Zhang <maggiezhangjiayi@gmail.com>
+# author: Jiayi (Maggie) Zhang <jiayizha@andrew.cmu.edu>
 
 import argparse
 import time
