@@ -29,7 +29,6 @@ def high_resolution_spectrogram(x, q, tdeci, over, noct, minf, maxf, lint=0.2, d
     minf     minimum frequency
     maxf     maximum frequency
              (both minf, maxf are numbers (0, 1], maxf should be <=0.5)
-    sr       sampling rate
     ndiv     number of divisions/bins in the frequency axis
     lint     threshold for ignoring reassignments that are too far
              (points that are >= lint away from its original location
