@@ -1,5 +1,6 @@
-### An example for batch processing audios in a given folder with
+### an example for batch processing audios in a given folder with
 # linear-scale frequency scan implementation
+# author: Jiayi (Maggie) Zhang <maggiezhangjiayi@gmail.com>
 
 import argparse
 import time
@@ -10,7 +11,6 @@ import numpy as np
 import librosa
 import torch
 import reassignment.reassignment_linear as reassign_lin
-import reassignment.lin_online as lin_online
 import matplotlib.pyplot as plt
 
 # turn the histogram matrix into an image
@@ -18,6 +18,7 @@ def make_image(spectrogram, minf, maxf, sr, length, save_dir):
     h, w = spectrogram.shape
     num = math.ceil(math.log2(maxf/minf))
 
+    # calculate the tick marks
     y_axis = np.logspace(0, num, base=2) * minf * sr
     y_axis = np.round(y_axis).astype(int)
     y_range = np.linspace(0, h-1, num=len(y_axis))
@@ -62,7 +63,7 @@ if __name__ == '__main__':
 
                 # time and run the anlysis
                 tic = time.perf_counter()
-                spectrogram = lin_online.high_resolution_spectrogram(x, q, tdeci, over, noct, minf, maxf)
+                spectrogram = reassign_lin.high_resolution_spectrogram(x, q, tdeci, over, noct, minf, maxf)
                 toc = time.perf_counter()
                 print("Task done in %.5f seconds."%(toc-tic))
 
@@ -71,7 +72,5 @@ if __name__ == '__main__':
                 spectrogram = spectrogram.cpu().numpy().T
                 np.save("%s"%filename.replace(".wav", "_spec"), spectrogram)
                 make_image(spectrogram, minf, maxf, length, "%s"%filename.replace(".wav", "_spec.png"))
-
-    # make_image(np.load("mini/middle a triangle_spec.npy"), minf, maxf, 96000, 4, "test.png")
 
 
