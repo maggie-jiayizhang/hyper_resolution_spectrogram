@@ -7,8 +7,11 @@
 #    github repo: https://github.com/earthspecies/spectral_hyperresolution
 # 2) the non-vectorized implementation in the current repository
 
-# Important note
+# Important note 1
 # This is an vectorized version of the algorithm, meant to speed up the calculations even more (esp. with gpu). Mr. Osmulski developed the first version; the author here adapated it to newer PyTorch methods and simplified the code (the most notable modification is the removal of unnecesarry tensor allocations).
+
+# Import note 2
+# The results from the vectorized version might be DIFFERENT from the those yielded from the iterative versions. The (relative) representations seemed to be correct (upon inspection of the resultant histogram), but the values were not the same. Use this implemenation at your discretion and double check with results from other versions, if possible.
 
 import torch
 import torch.fft as fft
