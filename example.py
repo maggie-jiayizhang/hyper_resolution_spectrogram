@@ -71,6 +71,6 @@ if __name__ == '__main__':
                 # No need to do it if device = cpu
                 spectrogram = spectrogram.cpu().numpy().T
                 np.save("%s"%filename.replace(".wav", "_spec"), spectrogram)
-                make_image(spectrogram, minf, maxf, length, "%s"%filename.replace(".wav", "_spec.png"))
+                make_image(spectrogram, minf, maxf, sr, length, "%s"%filename.replace(".wav", "_spec.png"))
 
 
