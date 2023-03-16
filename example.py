@@ -37,7 +37,8 @@ def make_image(spectrogram, minf, maxf, sr, length, save_dir):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--data_dir')
+    parser.add_argument('--data_dir', default='test_audio')
+    parser.add_argument('--device', default='cuda', choices=['cuda', 'cpu'])
     args = parser.parse_args()
 
     data_dir = args.data_dir
@@ -63,7 +64,7 @@ if __name__ == '__main__':
 
                 # time and run the anlysis
                 tic = time.perf_counter()
-                spectrogram = reassign_lin.high_resolution_spectrogram(x, q, tdeci, over, noct, minf, maxf)
+                spectrogram = reassign_lin.high_resolution_spectrogram(x, q, tdeci, over, noct, minf, maxf, device=args.device)
                 toc = time.perf_counter()
                 print("Task done in %.5f seconds."%(toc-tic))
 

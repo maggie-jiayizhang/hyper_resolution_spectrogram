@@ -4,6 +4,12 @@ This repository hosts a working Python3 implementation of the reassignment algor
 
 There are several implementations within the *reassignment* folder, and *reassignment_linear.py* contains the implemenation closest to the original [Matlab code](./reassignmentgw.m), provided by Dr. Magnasco. For more detailed information, please read the specifications within each file.
 
+## Pre-requisites
+The required libraries can be installed by running (preferably in a [virtual environment](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/)):
+```bash
+pip install -r requirements.txt
+```
+
 An example routine is provided in the *example.py* file. You can run
 ```bash
 $ python3 example.py --data_dir your_dir

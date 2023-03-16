@@ -1,3 +1,6 @@
 # storage, cache
 .DS_store
 __pycache__/
+test_audio/*.npy
+test_audio/*.png
+env/
